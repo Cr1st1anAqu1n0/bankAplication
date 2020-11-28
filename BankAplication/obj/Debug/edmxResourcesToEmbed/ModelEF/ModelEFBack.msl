@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbbankaplicationModelStoreContainer" CdmEntityContainer="dbbankaplicationEntitiesBanck">
+    <EntitySetMapping Name="ACCOUNTs">
+      <EntityTypeMapping TypeName="dbbankaplicationModel.ACCOUNT">
+        <MappingFragment StoreEntitySet="ACCOUNT">
+          <ScalarProperty Name="coin" ColumnName="coin" />
+          <ScalarProperty Name="states" ColumnName="states" />
+          <ScalarProperty Name="accountnum" ColumnName="accountnum" />
+          <ScalarProperty Name="codclient" ColumnName="codclient" />
+          <ScalarProperty Name="coddept" ColumnName="coddept" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="correlative" ColumnName="correlative" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTs">
+      <EntityTypeMapping TypeName="dbbankaplicationModel.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
+          <ScalarProperty Name="codcliente" ColumnName="codcliente" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COINs">
+      <EntityTypeMapping TypeName="dbbankaplicationModel.COIN">
+        <MappingFragment StoreEntitySet="COIN">
+          <ScalarProperty Name="idcoin" ColumnName="idcoin" />
+          <ScalarProperty Name="codcoin" ColumnName="codcoin" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="codmov" ColumnName="codmov" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTAMENTs">
+      <EntityTypeMapping TypeName="dbbankaplicationModel.DEPARTAMENT">
+        <MappingFragment StoreEntitySet="DEPARTAMENT">
+          <ScalarProperty Name="iddept" ColumnName="iddept" />
+          <ScalarProperty Name="coddept" ColumnName="coddept" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOVEMENTs">
+      <EntityTypeMapping TypeName="dbbankaplicationModel.MOVEMENT">
+        <MappingFragment StoreEntitySet="MOVEMENT">
+          <ScalarProperty Name="idmov" ColumnName="idmov" />
+          <ScalarProperty Name="accountnum" ColumnName="accountnum" />
+          <ScalarProperty Name="codcoin" ColumnName="codcoin" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

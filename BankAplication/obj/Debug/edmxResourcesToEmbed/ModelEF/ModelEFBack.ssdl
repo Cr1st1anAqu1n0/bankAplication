@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbbankaplicationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="accountnum" />
+    </Key>
+    <Property Name="accountnum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="codclient" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="coddept" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="correlative" Type="nvarchar" MaxLength="50" />
+    <Property Name="states" Type="bit" />
+    <Property Name="coin" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="codcliente" />
+    </Key>
+    <Property Name="codcliente" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="COIN">
+    <Key>
+      <PropertyRef Name="idcoin" />
+    </Key>
+    <Property Name="idcoin" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="codcoin" Type="nvarchar" MaxLength="50" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" />
+    <Property Name="codmov" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DEPARTAMENT">
+    <Key>
+      <PropertyRef Name="iddept" />
+    </Key>
+    <Property Name="iddept" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="coddept" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MOVEMENT">
+    <Key>
+      <PropertyRef Name="idmov" />
+    </Key>
+    <Property Name="idmov" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="accountnum" Type="nvarchar" MaxLength="50" />
+    <Property Name="codcoin" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="dbbankaplicationModelStoreContainer">
+    <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COIN" EntityType="Self.COIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEPARTAMENT" EntityType="Self.DEPARTAMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MOVEMENT" EntityType="Self.MOVEMENT" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

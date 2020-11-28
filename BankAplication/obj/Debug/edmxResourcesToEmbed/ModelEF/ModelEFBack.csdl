@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbbankaplicationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="accountnum" />
+    </Key>
+    <Property Name="accountnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="codclient" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="coddept" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="correlative" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="states" Type="Boolean" />
+    <Property Name="coin" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="codcliente" />
+    </Key>
+    <Property Name="codcliente" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="COIN">
+    <Key>
+      <PropertyRef Name="idcoin" />
+    </Key>
+    <Property Name="idcoin" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="codcoin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="codmov" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DEPARTAMENT">
+    <Key>
+      <PropertyRef Name="iddept" />
+    </Key>
+    <Property Name="iddept" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="coddept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MOVEMENT">
+    <Key>
+      <PropertyRef Name="idmov" />
+    </Key>
+    <Property Name="idmov" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="accountnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="codcoin" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="dbbankaplicationEntitiesBanck" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACCOUNTs" EntityType="Self.ACCOUNT" />
+    <EntitySet Name="CLIENTs" EntityType="Self.CLIENT" />
+    <EntitySet Name="COINs" EntityType="Self.COIN" />
+    <EntitySet Name="DEPARTAMENTs" EntityType="Self.DEPARTAMENT" />
+    <EntitySet Name="MOVEMENTs" EntityType="Self.MOVEMENT" />
+  </EntityContainer>
+</Schema>
